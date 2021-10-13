@@ -7,6 +7,19 @@ namespace StoreApp.Areas.Identity.Data
 {
     public class AuthMessageSenderOptions
     {
-        public readonly string SendGridKey = "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";
+        public readonly string SendGridKey = "";
+
+        public AuthMessageSenderOptions()
+        {
+            VerifyKey();
+        }
+
+        private void VerifyKey()
+        {
+            if ((string.IsNullOrEmpty(SendGridKey)))
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }
